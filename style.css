@@ -1,0 +1,36 @@
+body {
+    height: 100%;
+    max-width: 20px;
+    margin: 10% auto;
+    padding: 0;
+    overflow: hidden;
+    padding-top: 15em; /* Ajuste el espacio superior */
+    background: url('img/superficie.jpg') no-repeat center;
+    background-size: 50%; /* Tamaño más pequeño de la imagen de fondo */
+}
+
+.nau-container {
+    position: relative;
+    height: 0; /* Asegura que el contenedor no ocupe espacio extra */
+    padding-bottom: 100px; /* Espacio suficiente para la nave */
+}
+
+.nau {
+    position: absolute;
+    top: calc(80% + 20px); /* Calcula la posición debajo de la imagen de fondo */
+    left: 50%; /* Coloca la nave en la mitad horizontal */
+    transform: translateX(-50%); /* Centra la nave horizontalmente */
+    animation: aterratge 3s ease forwards; /* Aplicación de la animación */
+    opacity: 0; /* No es visible al principio */
+}
+
+@keyframes aterratge {
+    0% {
+        transform: translateY(-500px); /* La nave comienza arriba */
+        opacity: 0; /* No es visible al principio */
+    }
+    100% {
+        transform: translateY(0); /* La nave aterriza */
+        opacity: 1; /* Totalmente visible al final */
+    }
+}
